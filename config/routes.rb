@@ -6,6 +6,12 @@ Rails.application.routes.draw do
   # GET "/pricing"
   get "pricing", to: "pricing#index"
 
+  # GET "/sign_up"
+  get "sign_up", to: "registrations#new"
+
+  # POST 
+  post "sign_up", to: "registrations#create"
+
   # GET "/". Main root path 
   root to: "main#index"
 
