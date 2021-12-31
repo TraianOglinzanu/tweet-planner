@@ -7,7 +7,9 @@ class RegistrationsController < ApplicationController
         #render plain: params[:user]   #references all parameters seen in logs. Take data from form to put into params
 
         @user = User.new(user_params) # takes hash of params and gives it to users.new
+        
         if @user.save 
+            session[:user_id] = @user.id # Going to sign in the user. Cookie type
             redirect_to root_path, notice: "Successfully created account"
         else 
             #flash[:alert] = "Could not create account "

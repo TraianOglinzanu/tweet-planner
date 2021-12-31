@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   # POST 
   post "sign_up", to: "registrations#create"
 
+  # DELETE. This will allow the user to log out of the application
+  delete "logout", to: "sessions#destroy"
+
   # GET "/". Main root path 
   root to: "main#index"
 
