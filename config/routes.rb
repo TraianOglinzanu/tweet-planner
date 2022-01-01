@@ -15,6 +15,12 @@ Rails.application.routes.draw do
   # DELETE. This will allow the user to log out of the application
   delete "logout", to: "sessions#destroy"
 
+  # GET "/sign_up". Allow user to sign 
+  get "sign_in", to: "sessions#new"
+
+  # POST. Allow user to sign in 
+  post "sign_in", to: "sessions#create"
+
   # GET "/". Main root path 
   root to: "main#index"
 
