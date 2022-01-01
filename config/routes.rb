@@ -21,6 +21,12 @@ Rails.application.routes.draw do
   # POST. Allow user to sign in 
   post "sign_in", to: "sessions#create"
 
+  # GET "/password"
+  get "password", to: "passwords#edit", as: :edit_password
+
+  # PATCH. Allow partial update for password change
+  patch "password", to: "passwords#update"
+
   # GET "/". Main root path 
   root to: "main#index"
 
