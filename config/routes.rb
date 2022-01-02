@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # GET "/sign_up"
   get "sign_up", to: "registrations#new"
 
-  # POST 
+  # POST. Allow user to create a new account 
   post "sign_up", to: "registrations#create"
 
   # DELETE. This will allow the user to log out of the application
@@ -26,6 +26,18 @@ Rails.application.routes.draw do
 
   # PATCH. Allow partial update for password change
   patch "password", to: "passwords#update"
+
+  # GET "password/reset"
+  get "password/reset", to: "password_resets#new"
+
+  # POST. Allow user to reset password
+  post "password/reset", to: "password_resets#create"
+
+  # GET "password/reset/edit"
+  get "password/reset/edit", to: "password_resets#edit"
+
+  # PATCH. Allow user to update password
+  patch "password/reset/edit", to: "password_resets#update"
 
   # GET "/". Main root path 
   root to: "main#index"
